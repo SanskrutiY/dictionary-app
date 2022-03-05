@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.location.GnssAntennaInfo;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -42,8 +43,12 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.setTitle("Loading...");
         progressDialog.show();
         RequestManager manager = new RequestManager(MainActivity.this);
-        String word;
-        manager.getWordMeaning(listener, "hello");
+
+        String word = getIntent().getExtras().getString("randomWord");
+        if (word.equals("")) {
+            word = "hello";
+        }
+        manager.getWordMeaning(listener, word);
 
         search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
