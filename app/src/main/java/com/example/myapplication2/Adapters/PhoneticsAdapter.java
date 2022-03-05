@@ -1,5 +1,6 @@
 package com.example.myapplication2.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -35,7 +36,7 @@ public class PhoneticsAdapter extends RecyclerView.Adapter<PhoneticViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PhoneticViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PhoneticViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.textView_phonetic.setText(phoneticsList.get(position).getText());
         holder.imageButton_audio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +44,8 @@ public class PhoneticsAdapter extends RecyclerView.Adapter<PhoneticViewHolder> {
                 MediaPlayer player = new MediaPlayer();
                 try {
                     player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                    player.setDataSource("https:"+phoneticsList.get(position).getAudio());
+                    player.setDataSource(phoneticsList.get(position).getAudio());
+                    //Toast.makeText(context, phoneticsList.get(position).getAudio(), Toast.LENGTH_SHORT).show();
                     player.prepare();
                     player.start();
                 } catch (Exception e){
