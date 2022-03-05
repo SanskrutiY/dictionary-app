@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
+
+
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showData(APIResponse apiResponse) {
         textView_word.setText("Word: "+apiResponse.getWord());
+        HistoryState.history.add(apiResponse.getWord());
         recycler_phonetics.setHasFixedSize(true);
         recycler_phonetics.setLayoutManager(new GridLayoutManager(this, 1));
         phoneticsAdapter =  new PhoneticsAdapter(this, apiResponse.getPhonetics());
