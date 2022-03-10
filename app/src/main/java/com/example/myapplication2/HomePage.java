@@ -127,7 +127,7 @@ public class HomePage extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.about:
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomePage.this, about.class));
                 return true;
             case R.id.notes:
                 Toast.makeText(this, "Notes", Toast.LENGTH_SHORT).show();
