@@ -1,8 +1,7 @@
-package com.example.myapplication2;
+package com.example.englishdictionary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ClipData;
 import android.os.Bundle;
 
 public class about extends AppCompatActivity {

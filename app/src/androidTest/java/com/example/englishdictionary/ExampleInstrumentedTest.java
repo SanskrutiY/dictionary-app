@@ -1,4 +1,4 @@
-package com.example.myapplication2;
+package com.example.englishdictionary;
 
 import android.content.Context;
 

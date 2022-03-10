@@ -1,10 +1,9 @@
-package com.example.myapplication2.Adapters;
+package com.example.englishdictionary.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication2.Models.Phonetics;
-import com.example.myapplication2.R;
-import com.example.myapplication2.ViewHolders.PhoneticViewHolder;
+import com.example.englishdictionary.Models.Phonetics;
+import com.example.englishdictionary.R;
+import com.example.englishdictionary.ViewHolders.PhoneticViewHolder;
 
 import java.util.List;
 

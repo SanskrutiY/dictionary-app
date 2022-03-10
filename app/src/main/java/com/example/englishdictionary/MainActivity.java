@@ -1,4 +1,4 @@
-package com.example.myapplication2;
+package com.example.englishdictionary;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -6,19 +6,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.location.GnssAntennaInfo;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication2.Adapters.MeaningAdapter;
-import com.example.myapplication2.Adapters.PhoneticsAdapter;
-import com.example.myapplication2.Models.APIResponse;
-import com.example.myapplication2.Models.Phonetics;
-
-import java.lang.ref.PhantomReference;
+import com.example.englishdictionary.Adapters.MeaningAdapter;
+import com.example.englishdictionary.Adapters.PhoneticsAdapter;
+import com.example.englishdictionary.Models.APIResponse;
 
 public class MainActivity extends AppCompatActivity {
     SearchView search_view;

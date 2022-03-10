@@ -1,4 +1,4 @@
-package com.example.myapplication2.Models;
+package com.example.englishdictionary.Models;
 
 public class Phonetics {
     String text = "";

@@ -1,9 +1,9 @@
-package com.example.myapplication2;
+package com.example.englishdictionary;
 
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.myapplication2.Models.APIResponse;
+import com.example.englishdictionary.Models.APIResponse;
 
 import java.util.List;
 

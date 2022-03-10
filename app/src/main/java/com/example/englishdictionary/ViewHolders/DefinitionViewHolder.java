@@ -1,4 +1,4 @@
-package com.example.myapplication2.ViewHolders;
+package com.example.englishdictionary.ViewHolders;
 
 import android.view.View;
 import android.widget.TextView;
@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication2.R;
+import com.example.englishdictionary.R;
 
 public class DefinitionViewHolder extends RecyclerView.ViewHolder {
     public TextView textView_definition, textView_example, textView_synonyms, textView_antonyms;

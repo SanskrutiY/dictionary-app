@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyApplication2</string>
+    <string name="app_name">English Dictionary</string>
     <string name="dictionary">Dictionary</string>
     <string name="search">Search</string>
     <string name="random">Random</string>

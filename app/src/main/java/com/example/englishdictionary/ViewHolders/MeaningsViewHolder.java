@@ -1,12 +1,11 @@
-package com.example.myapplication2.ViewHolders;
+package com.example.englishdictionary.ViewHolders;
 
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.myapplication2.R;
-import java.security.PublicKey;
+import com.example.englishdictionary.R;
 
 public class MeaningsViewHolder extends RecyclerView.ViewHolder {
     public TextView textView_partsOfSpeech;

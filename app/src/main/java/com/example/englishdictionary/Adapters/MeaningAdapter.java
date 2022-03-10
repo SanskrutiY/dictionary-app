@@ -1,4 +1,4 @@
-package com.example.myapplication2.Adapters;
+package com.example.englishdictionary.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,10 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication2.Models.Meanings;
-import com.example.myapplication2.R;
-import com.example.myapplication2.ViewHolders.MeaningsViewHolder;
-import com.example.myapplication2.ViewHolders.PhoneticViewHolder;
+import com.example.englishdictionary.Models.Meanings;
+import com.example.englishdictionary.R;
+import com.example.englishdictionary.ViewHolders.MeaningsViewHolder;
 
 import java.util.List;
 

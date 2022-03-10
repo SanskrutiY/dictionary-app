@@ -1,6 +1,6 @@
-package com.example.myapplication2;
+package com.example.englishdictionary;
 
-import com.example.myapplication2.Models.APIResponse;
+import com.example.englishdictionary.Models.APIResponse;
 
 public interface OnFetchDataListener {
     void onFetchData(APIResponse apiResponse, String message);
