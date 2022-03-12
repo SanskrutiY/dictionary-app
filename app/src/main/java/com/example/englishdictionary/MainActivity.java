@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             word = "hello";
         }
         manager.getWordMeaning(listener, word);
+        word = "hello";
 
         search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
