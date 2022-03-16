@@ -7,7 +7,7 @@
 
     </item>
 
-    <item
+   <item
         android:id="@+id/notes"
         android:title="Notes"/>
 
