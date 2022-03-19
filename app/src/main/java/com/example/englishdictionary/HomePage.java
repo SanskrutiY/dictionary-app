@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -20,6 +21,7 @@ public class HomePage extends AppCompatActivity {
     private Button search;
     private Button historyBtn;
     private Button randomBtn;
+
 
     private String randomWord = "";
 
@@ -94,6 +96,12 @@ public class HomePage extends AppCompatActivity {
         });
 
         historyBtn = (Button) findViewById((R.id.history));
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHistoryActivity();
+            }
+        });
 
 
         randomBtn = (Button) findViewById((R.id.random));
@@ -112,7 +120,12 @@ public class HomePage extends AppCompatActivity {
 
     private void openMAinActivity() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("randomWord", this.randomWord);
+        intent.putExtra("word", this.randomWord);
+        startActivity(intent);
+    }
+
+    private void openHistoryActivity() {
+        Intent intent = new Intent(this, History.class);
         startActivity(intent);
     }
 
@@ -136,5 +149,4 @@ public class HomePage extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

@@ -7,12 +7,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.englishdictionary.Adapters.MeaningAdapter;
 import com.example.englishdictionary.Adapters.PhoneticsAdapter;
+import com.example.englishdictionary.DBHelper;
 import com.example.englishdictionary.Models.APIResponse;
+import com.example.englishdictionary.R;
+import com.example.englishdictionary.RequestManager;
 
 public class MainActivity extends AppCompatActivity {
     SearchView search_view;
@@ -21,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     PhoneticsAdapter phoneticsAdapter;
     MeaningAdapter meaningAdapter;
-
+    EditText word;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DB = new DBHelper(this);
 
         search_view = findViewById(R.id.search_view);
         textView_word = findViewById(R.id.textView_word);
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.show();
         RequestManager manager = new RequestManager(MainActivity.this);
 
-        String word = getIntent().getExtras().getString("randomWord");
+        String word = getIntent().getExtras().getString("word");
         if (word.equals("")) {
             word = "hello";
         }
@@ -56,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 manager.getWordMeaning(listener, query);
                 return true;
             }
-
-
+            
 
             @Override
             public boolean onQueryTextChange(String newText) {
@@ -85,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void showData(APIResponse apiResponse) {
-        textView_word.setText("Word: "+apiResponse.getWord());
+        textView_word.setText(apiResponse.getWord());
         //HistoryState.history.add(apiResponse.getWord());
         recycler_phonetics.setHasFixedSize(true);
         recycler_phonetics.setLayoutManager(new GridLayoutManager(this, 1));
@@ -96,5 +101,14 @@ public class MainActivity extends AppCompatActivity {
         recycler_meanings.setLayoutManager(new GridLayoutManager(this, 1));
         meaningAdapter =  new MeaningAdapter(this, apiResponse.getMeanings());
         recycler_meanings.setAdapter(meaningAdapter);
+
+        //insert karayla
+        String word = textView_word.getText().toString();
+
+        Boolean checkinsertdata = DB.insertuserdata(word);
+        /*if(checkinsertdata==true)
+            Toast.makeText(MainActivity.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(MainActivity.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();*/
     }
 }
